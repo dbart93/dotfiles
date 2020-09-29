@@ -40,6 +40,8 @@ alias cd1='cd ..'
 alias cd2='cd ../..'
 alias cd3='cd ../../..'
 
+alias dstop='docker stop $(docker ps -a -q) >> /dev/null'
+
 alias gw=./gradlew
 alias enable_dev_opt='adb shell settings put global development_settings_enabled 1'
 alias dkact='enable_dev_opt; adb shell settings put global always_finish_activities 1'
