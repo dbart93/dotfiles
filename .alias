@@ -20,26 +20,30 @@ alias gcam='git commit -am'
 alias gcm='git commit -m'
 alias gl='git log'
 alias gamend='git add .; git commit --amend --no-edit'
-alias grename='git commit --amend'
 alias glg='git log --graph --oneline --decorate --all'
-alias gd='git diff HEAD'
 alias grm='git rebase master'
 alias gst='git status'
 alias gs='git stash'
 alias gstash='git add .; git stash'
 alias gsa='git stash apply'
-alias gcp='git cherry-pick'
 alias gwc='git whatchanged -p --abbrev-commit --pretty=medium'
 alias gc='git checkout'
 alias gcl='git clean -f -d'
 alias gsave='git add .; git stash; git stash apply'
 alias gr='git reset --soft HEAD~1'
-alias gauthor='git config --global user.name "Daniele Bartorilla"; git config --global user.email danielebartorilla@gmail.com; git commit --amend --reset-author'
-
 alias cd1='cd ..'
 alias cd2='cd ../..'
 alias cd3='cd ../../..'
 
+alias ktl='git diff --name-only --cached --relative | grep '\.kt$' | xargs ktlint -F --relative'
+
+function dexec() {
+  docker exec -it $1 bash
+}
+function dxg() { 
+  container=$(docker ps | grep $1 | awk '{print $1}')
+  dexec $container
+}
 alias dstop='docker stop $(docker ps -a -q) >> /dev/null'
 
 alias gw=./gradlew
