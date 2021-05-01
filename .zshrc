@@ -1,3 +1,4 @@
+ZSH_DISABLE_COMPFIX=true
 export ZSH="/Users/$USER/.oh-my-zsh"
 
 ZSH_THEME="agnoster"
@@ -20,3 +21,10 @@ source ~/.secure_env
 
 zstyle ':completion:*' use-cache on
 unsetopt PROMPT_SP
+
+bindkey "\e\eOD" backward-word 
+bindkey "\e\eOC" forward-word
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/danielebartorilla/.sdkman"
+[[ -s "/Users/danielebartorilla/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/danielebartorilla/.sdkman/bin/sdkman-init.sh"
