@@ -44,6 +44,15 @@ function dxg() {
   container=$(docker ps | grep $1 | awk '{print $1}')
   dexec $container
 }
+function dcont() {
+  docker ps | grep $1 | awk '{print $1}'
+}
+function dbuild() {
+  container=$(dcont $1)
+  docker exec $container rm -Rf /home/node/app/src /home/node/app/build
+  docker cp ./src/. $container:/home/node/app/src
+  docker exec $container npm run tsc
+}
 alias dstop='docker stop $(docker ps -a -q) >> /dev/null'
 
 alias gw=./gradlew
