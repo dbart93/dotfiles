@@ -28,3 +28,5 @@ bindkey "\e\eOC" forward-word
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/danielebartorilla/.sdkman"
 [[ -s "/Users/danielebartorilla/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/danielebartorilla/.sdkman/bin/sdkman-init.sh"
+
+source /Users/danielebartorilla/.walla_env

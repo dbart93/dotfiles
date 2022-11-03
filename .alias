@@ -37,6 +37,8 @@ alias cd3='cd ../../..'
 
 alias ktl='git diff --name-only --cached --relative | grep '\.kt$' | xargs ktlint -F --relative'
 
+alias scr='scrcpy --stay-awake --turn-screen-off --show-touches'
+
 function dexec() {
   docker exec -it $1 bash
 }
@@ -56,6 +58,7 @@ function dbuild() {
 alias dstop='docker stop $(docker ps -a -q) >> /dev/null'
 
 alias gw=./gradlew
+alias deepl='adb shell am start -a android.intent.action.VIEW -d'
 alias enable_dev_opt='adb shell settings put global development_settings_enabled 1'
 alias dkact='enable_dev_opt; adb shell settings put global always_finish_activities 1'
 alias kact='enable_dev_opt; adb shell settings put global always_finish_activities 0'
